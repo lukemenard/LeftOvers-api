@@ -19,5 +19,3 @@ Food.create(
     food_category: 'Vegetable',
     user_id: user.id
 )
-
-# eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.jUUhCdaV0RVsNikYGJYpc_Rw5jEUuSVidZPIyRUq9gw
