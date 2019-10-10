@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Food.destroy_all
+
+user = User.all.first
+
+Food.create(
+    name: 'Salmon',
+    expiration_date: '3/4/2019',
+    quantity: 1,
+    quantity_unit: 'lbs',
+    value: 4.5,
+    food_category: 'Vegetable',
+    user_id: user.id
+)
