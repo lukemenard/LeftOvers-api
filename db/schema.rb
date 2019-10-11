@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_10_10_005120) do
   enable_extension "plpgsql"
 
   create_table "foods", force: :cascade do |t|
-    t.string "name"
+    t.string "food_name"
     t.date "expiration_date"
     t.float "quantity"
     t.string "quantity_unit"
