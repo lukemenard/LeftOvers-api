@@ -13,7 +13,14 @@ class FoodsController < ApplicationController
     end
 
     def create
-        @food = current_user.foods.create(food_params)
+        # byebug
+        @price = params[:value].to_f
+        @quantity = params[:quantity].to_f
+        @rate = @price / @quantity
+        
+        @food = current_user.foods.new(food_params)
+        @food.conversion_rate = @rate
+        @food.save
 
         render json: @food
     end

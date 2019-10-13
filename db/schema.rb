@@ -18,10 +18,11 @@ ActiveRecord::Schema.define(version: 2019_10_10_005120) do
   create_table "foods", force: :cascade do |t|
     t.string "food_name"
     t.date "expiration_date"
-    t.float "quantity"
+    t.decimal "quantity"
     t.string "quantity_unit"
-    t.float "value"
+    t.decimal "value"
     t.string "food_category"
+    t.decimal "conversion_rate"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
