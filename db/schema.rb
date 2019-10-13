@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_005120) do
+ActiveRecord::Schema.define(version: 2019_10_13_224132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,5 +38,20 @@ ActiveRecord::Schema.define(version: 2019_10_10_005120) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "wastes", force: :cascade do |t|
+    t.string "food_name"
+    t.decimal "cost", precision: 10, scale: 2
+    t.decimal "quantity", precision: 10, scale: 2
+    t.string "quantity_unit"
+    t.string "food_category"
+    t.string "disposal_reason"
+    t.string "disposal_method"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_wastes_on_user_id"
+  end
+
   add_foreign_key "foods", "users"
+  add_foreign_key "wastes", "users"
 end
