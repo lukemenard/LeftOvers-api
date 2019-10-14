@@ -12,14 +12,13 @@ class WastesController < ApplicationController
     end
 
     def create
-        @food_conversion_rate = Food.find_by(id: params[:id]).conversion_rate
+        @food = Food.find_by(id: params[:id])
+        @food_conversion_rate = @food.conversion_rate
         @quantity = params[:quantity].to_f
         @cost = @quantity * @food_conversion_rate
         @waste = current_user.wastes.new(waste_params)
         @waste.cost = @cost
         @waste.save
-
-        # byebug
 
         render json: @waste
     end
